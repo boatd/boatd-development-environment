@@ -7,12 +7,10 @@ RUN apt-get -y update && apt-get install -y \
     supervisor
 
 RUN git clone --recursive https://github.com/sails-simulator/sailsd.git
-RUN ls sailsd
 RUN make -C sailsd
 RUN make -C sailsd install
 
 RUN git clone https://github.com/sails-simulator/sails-ui-web
-RUN ls sails-ui-web
 RUN cp sails-ui-web/sails-ui-web /usr/local/bin/
 RUN pip3 install python-sailsd aiohttp
 
