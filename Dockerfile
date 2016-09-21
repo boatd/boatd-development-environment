@@ -16,6 +16,8 @@ RUN ls sails-ui-web
 RUN cp sails-ui-web/sails-ui-web /usr/local/bin/
 RUN pip3 install python-sailsd aiohttp
 
+RUN git clone https://github.com/sails-simulator/sails-boatd-driver.git
+
 RUN pip install boatd python-boatdclient python-sailsd
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
