@@ -2,5 +2,13 @@ boatd:
     port: 2222
     interface: 0.0.0.0
 
+plugins:
+    - logger:
+        enabled: false
+
+behaviours:
+    - nothing:
+        file: not_much
+
 driver:
     file: /sails-boatd-driver/driver.py
