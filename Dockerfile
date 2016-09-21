@@ -21,6 +21,7 @@ RUN git clone https://github.com/sails-simulator/sails-boatd-driver.git
 RUN pip install boatd python-boatdclient python-sailsd
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY boatd-sailsd-config.yaml /etc/boatd-config.yaml
 
 EXPOSE 2222 8080
 CMD ["/usr/bin/supervisord"]
