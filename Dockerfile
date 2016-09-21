@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER Louis Taylor "louis@kragniz.eu"
 
 RUN apt-get -y update && apt-get install -y \
