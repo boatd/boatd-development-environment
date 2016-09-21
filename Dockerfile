@@ -1,7 +1,10 @@
 FROM debian:jessie
 MAINTAINER Louis Taylor "louis@kragniz.eu"
 
-RUN apt-get -y update && apt-get install -y git make gcc pkg-config libjansson-dev python-pip python3-pip python3 supervisor
+RUN apt-get -y update && apt-get install -y \
+    git make gcc pkg-config libjansson-dev \
+    python-pip python3-pip python3 \
+    supervisor
 
 RUN git clone --recursive https://github.com/sails-simulator/sailsd.git
 RUN ls sailsd
