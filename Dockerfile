@@ -21,5 +21,5 @@ RUN pip install boatd python-boatdclient python-sailsd
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY boatd-sailsd-config.yaml /etc/boatd-config.yaml
 
-EXPOSE 2222 8080
+EXPOSE 2222 3333 8080
 CMD ["/usr/bin/supervisord"]
