@@ -1,6 +1,8 @@
 boatd-development-environment
 =============================
 
+[![](https://images.microbadger.com/badges/image/kragniz/boatd-development-environment.svg)](https://microbadger.com/images/kragniz/boatd-development-environment)
+
 Docker container running an easy to use development environment for boatd,
 using sails.
 
