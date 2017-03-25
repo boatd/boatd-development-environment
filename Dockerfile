@@ -6,13 +6,12 @@ RUN apt-get -y update && apt-get install -y \
     python-pip python3-pip python3 \
     supervisor
 
-RUN git clone --recursive https://github.com/sails-simulator/sailsd.git
-RUN make -C sailsd
-RUN make -C sailsd install
-
-RUN git clone https://github.com/sails-simulator/sails-ui-web
-RUN cp sails-ui-web/sails-ui-web /usr/local/bin/
-RUN pip3 install python-sailsd aiohttp
+RUN git clone --recursive https://github.com/sails-simulator/sailsd.git && \
+    make -C sailsd && \
+    make -C sailsd install && \
+    git clone https://github.com/sails-simulator/sails-ui-web && \
+    cp sails-ui-web/sails-ui-web /usr/local/bin/ && \
+    pip3 install python-sailsd aiohttp
 
 RUN git clone https://github.com/sails-simulator/sails-boatd-driver.git
 
