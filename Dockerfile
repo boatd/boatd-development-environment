@@ -1,9 +1,16 @@
-FROM debian:stretch
+FROM alpine:3.5
 MAINTAINER Louis Taylor "louis@kragniz.eu"
 
-RUN apt-get -y update && apt-get install -y \
-    git make gcc pkg-config libjansson-dev \
-    python-pip python3-pip python3 \
+RUN apk add --update-cache \
+    --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
+    git \
+    make \
+    gcc \
+    pkg-config \
+    libjansson-dev \
+    python-pip \
+    python3-pip \
+    python3 \
     supervisor
 
 RUN git clone --recursive https://github.com/sails-simulator/sailsd.git && \
