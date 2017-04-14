@@ -2,14 +2,14 @@ FROM alpine:3.5
 MAINTAINER Louis Taylor "louis@kragniz.eu"
 
 RUN apk add --update-cache \
-    --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
     git \
     make \
     gcc \
-    pkg-config \
-    libjansson-dev \
-    python-pip \
-    python3-pip \
+    musl-dev \
+    pkgconfig \
+    jansson-dev \
+    python \
+    py-pip \
     python3 \
     supervisor
 
@@ -28,4 +28,4 @@ COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY boatd-sailsd-config.yaml /etc/boatd-config.yaml
 
 EXPOSE 2222 3333 8080
-CMD ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
